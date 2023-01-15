@@ -51,7 +51,7 @@ const SingUp = () => {
             name : name,
             email : email
         }
-        fetch('http://localhost:5000/createUser',{
+        fetch('https://doctor-server-sigma.vercel.app/createUser',{
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -66,7 +66,7 @@ const SingUp = () => {
     }
 
     const getUserToken = email =>{
-        fetch(`http://localhost:5000/jwt?email=${email}`)
+        fetch(`https://doctor-server-sigma.vercel.app/jwt?email=${email}`)
         .then(res => res.json())
         .then(data =>{
             if(data.accessToken){

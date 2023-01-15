@@ -5,7 +5,7 @@ import { AuthProvider } from '../../../Context/AuthContext/AuthContext';
 
 const MyAppointment = () => {
     const {user} = useContext(AuthProvider);
-    const url = `http://localhost:5000/booking?email=${user?.email}`;
+    const url = `https://doctor-server-sigma.vercel.app/booking?email=${user?.email}`;
     const {data : booking = [] }=  useQuery({
         queryKey:['booking', user?.email],
         queryFn: async () =>{

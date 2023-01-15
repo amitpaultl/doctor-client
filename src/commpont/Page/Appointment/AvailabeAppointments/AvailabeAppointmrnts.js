@@ -13,7 +13,7 @@ const AvailabeAppointmrnts = ({selectDate}) => {
     const {data: appointmentdate = [],refetch, isLoading}=useQuery({
         queryKey:['option'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/option?date=${date}`)
+            const res = await fetch(`https://doctor-server-sigma.vercel.app/option?date=${date}`)
             const data = await res.json();
             return data.data
         }

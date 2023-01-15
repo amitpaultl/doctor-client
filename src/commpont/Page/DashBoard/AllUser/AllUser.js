@@ -5,14 +5,14 @@ const AllUser = () => {
     const {data:users = [], refetch} = useQuery({
         queryKey:['createUser'],
         queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/createUser');
+            const res = await fetch('https://doctor-server-sigma.vercel.app/createUser');
             const data = await res.json();
             return data
         }
     })
 
     const handeleMakeAdmin =id=>{
-        fetch(`http://localhost:5000/createUser/admin/${id}`,{
+        fetch(`https://doctor-server-sigma.vercel.app/createUser/admin/${id}`,{
             method : 'PUT',
             headers: {
                 authorization : `bearer ${localStorage.getItem('accessToken')}`

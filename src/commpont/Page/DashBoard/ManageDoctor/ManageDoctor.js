@@ -13,7 +13,7 @@ const ManageDoctor = () => {
         queryKey: ['doctor'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/doctors', {
+                const res = await fetch('https://doctor-server-sigma.vercel.app/doctors', {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     },
@@ -28,7 +28,7 @@ const ManageDoctor = () => {
     })
 
     const successAction=(modalData)=>{
-        fetch(`http://localhost:5000/doctors/${modalData._id}`,{
+        fetch(`https://doctor-server-sigma.vercel.app/doctors/${modalData._id}`,{
             method:'DELETE',
             headers:{
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

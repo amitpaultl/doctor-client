@@ -7,7 +7,7 @@ const useAdmin = (email) => {
     useState(() => {
         if (email) {
 
-            fetch(`http://localhost:5000/createUser/admin/${email}`)
+            fetch(`https://doctor-server-sigma.vercel.app/createUser/admin/${email}`)
                 .then(res => res.json())
                 .then(data => {
                    

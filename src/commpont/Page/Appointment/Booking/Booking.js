@@ -26,7 +26,7 @@ const Booking = ({ tetment, selectDate,setTetment ,refetch}) => {
 
         }
         // fetch
-        fetch('http://localhost:5000/booking',{
+        fetch('https://doctor-server-sigma.vercel.app/booking',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
